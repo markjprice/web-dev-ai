@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Workshop Signup</title>
+  </head>
+
+  <body>
+    <h1>Workshop Signup</h1>
+
+    <p>
+      Fill out this form to register your interest in the workshop.
+      This example demonstrates how form fields collect values and submit them to a server.
+    </p>
+
+    <form action="/signup" method="post">
+      <h2>Your details</h2>
+
+      <p>
+        <label for="fullName">Full name</label><br>
+        <input type="text" id="fullName" name="fullName" required>
+      </p>
+
+      <p>
+        <label for="email">Email address</label><br>
+        <input type="email" id="email" name="email" required>
+      </p>
+
+      <h2>Experience level</h2>
+      <p>
+        Choose the option that best describes you:
+      </p>
+
+      <p>
+        <input type="radio" id="levelBeginner" name="experienceLevel" value="beginner" checked>
+        <label for="levelBeginner">Beginner</label>
+        <br>
+
+        <input type="radio" id="levelSome" name="experienceLevel" value="some-experience">
+        <label for="levelSome">Some experience</label>
+        <br>
+
+        <input type="radio" id="levelAdvanced" name="experienceLevel" value="advanced">
+        <label for="levelAdvanced">Advanced</label>
+      </p>
+
+      <h2>Topics of interest</h2>
+      <p>
+        Pick any topics you’d like the workshop to include more of:
+      </p>
+
+      <p>
+        <input type="checkbox" id="topicHtml" name="topics" value="html">
+        <label for="topicHtml">HTML</label>
+        <br>
+
+        <input type="checkbox" id="topicCss" name="topics" value="css">
+        <label for="topicCss">CSS</label>
+        <br>
+
+        <input type="checkbox" id="topicJavaScript" name="topics" value="javascript">
+        <label for="topicJavaScript">JavaScript</label>
+        <br>
+
+        <input type="checkbox" id="topicPython" name="topics" value="python">
+        <label for="topicPython">Python</label>
+      </p>
+
+      <h2>Additional notes</h2>
+      <p>
+        <label for="notes">Questions or comments</label><br>
+        <textarea id="notes" name="notes" rows="6" cols="40"></textarea>
+      </p>
+
+      <h2>How did you hear about this?</h2>
+      <p>
+        <label for="referrer">Referrer</label><br>
+        <select id="referrer" name="referrer">
+          <option value="search">Search engine</option>
+          <option value="social">Social media</option>
+          <option value="friend">Friend or colleague</option>
+          <option value="newsletter">Newsletter</option>
+          <option value="other">Other</option>
+        </select>
+      </p>
+
+      <p>
+        <button type="submit">Submit signup</button>
+        <button type="reset">Clear form</button>
+      </p>
+    </form>
+
+    <p>
+      <a href="workshop.html">Back to workshop info</a>
+    </p>
+  </body>
+</html>
