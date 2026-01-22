@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Me</title>
+  </head>
+
+  <body>
+    <h1>Contact Me</h1>
+
+    <p>
+      Use this form to send me a message. For now, it doesn’t actually send email.
+      It demonstrates how forms collect data and submit it to a server.
+    </p>
+
+    <form action="/contact" method="post">
+      <h2>Your details</h2>
+
+      <p>
+        <label for="fullName">Full name</label><br>
+        <input type="text" id="fullName" name="fullName" required>
+      </p>
+
+      <p>
+        <label for="email">Email address</label><br>
+        <input type="email" id="email" name="email" required>
+      </p>
+
+      <p>
+        <label for="phone">Phone (optional)</label><br>
+        <input type="tel" id="phone" name="phone">
+      </p>
+
+      <h2>Your message</h2>
+
+      <p>
+        <label for="topic">Topic</label><br>
+        <select id="topic" name="topic">
+          <option value="question">Question</option>
+          <option value="feedback">Feedback</option>
+          <option value="business">Business inquiry</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="6" cols="40" required></textarea>
+      </p>
+
+      <h2>Preferences</h2>
+
+      <p>
+        Preferred contact method:
+        <br>
+        <input type="radio" id="contactEmail" name="preferredContact" value="email" checked>
+        <label for="contactEmail">Email</label>
+
+        <br>
+
+        <input type="radio" id="contactPhone" name="preferredContact" value="phone">
+        <label for="contactPhone">Phone</label>
+      </p>
+
+      <p>
+        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+        <label for="newsletter">Send me occasional updates</label>
+      </p>
+
+      <p>
+        <button type="submit">Send message</button>
+        <button type="reset">Clear form</button>
+      </p>
+    </form>
+
+    <p>
+      <a href="index.html">Back to About Me</a>
+    </p>
+  </body>
+</html>
