@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Car</title>
+  <style>
+    /* Pure CSS car. No images, no SVG. */
+    :root {
+      --car: #2b6cb0;
+      --car2: #1e4e8c;
+      --glass: #bfe3ff;
+      --trim: #1a202c;
+      --wheel: #111827;
+      --rim: #e5e7eb;
+      --road: #e5e7eb;
+      --shadow: rgba(0,0,0,.18);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 50% 20%, #ffffff 0%, #f3f4f6 45%, #eef2f7 100%);
+    }
+
+    .scene {
+      width: 520px;
+      max-width: 92vw;
+      padding: 28px 18px 10px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.6);
+      box-shadow: 0 18px 40px rgba(0,0,0,.08);
+    }
+
+    .road {
+      height: 10px;
+      border-radius: 999px;
+      background: var(--road);
+      margin-top: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .road::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0 12px, rgba(0,0,0,.08) 12px 22px, transparent 22px 44px);
+      opacity: .45;
+      transform: translateX(-12px);
+    }
+
+    .car {
+      position: relative;
+      width: 420px;
+      max-width: 86vw;
+      height: 180px;
+      margin: 0 auto;
+    }
+
+    /* Shadow under car */
+    .car::after {
+      content: "";
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      bottom: 22px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--shadow);
+      filter: blur(2px);
+    }
+
+    /* Car body (lower) */
+    .body {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: 35px;
+      height: 72px;
+      border-radius: 22px 22px 18px 18px;
+      background: linear-gradient(180deg, var(--car) 0%, var(--car2) 100%);
+      box-shadow: 0 10px 18px rgba(0,0,0,.14);
+      overflow: hidden;
+    }
+
+    /* Lower body highlight */
+    .body::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      top: 10px;
+      height: 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.22);
+    }
+
+    /* Front bumper */
+    .body::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      width: 56px;
+      height: 32px;
+      border-radius: 14px 20px 18px 14px;
+      background: rgba(0,0,0,.18);
+      mix-blend-mode: multiply;
+    }
+
+    /* Car top (cabin) */
+    .top {
+      position: absolute;
+      left: 120px;
+      right: 95px;
+      bottom: 95px;
+      height: 64px;
+      background: linear-gradient(180deg, var(--car) 0%, var(--car2) 100%);
+      border-radius: 26px 42px 16px 16px;
+      box-shadow: 0 8px 14px rgba(0,0,0,.12);
+      overflow: hidden;
+    }
+
+    /* Windshield + side window */
+    .top::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      width: 120px;
+      height: 38px;
+      border-radius: 16px 22px 12px 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,.55) 0%, var(--glass) 55%, rgba(191,227,255,.9) 100%);
+      box-shadow: inset 0 0 0 3px rgba(26,32,44,.15);
+    }
+
+    .top::after {
+      content: "";
+      position: absolute;
+      left: 142px;
+      top: 14px;
+      width: 84px;
+      height: 36px;
+      border-radius: 12px 16px 12px 10px;
+      background: linear-gradient(180deg, rgba(255,255,255,.55) 0%, var(--glass) 55%, rgba(191,227,255,.9) 100%);
+      box-shadow: inset 0 0 0 3px rgba(26,32,44,.15);
+    }
+
+    /* Door line */
+    .door {
+      position: absolute;
+      left: 160px;
+      bottom: 45px;
+      width: 110px;
+      height: 56px;
+      border-radius: 10px;
+      box-shadow: inset -2px 0 0 rgba(255,255,255,.18),
+                  inset 2px 0 0 rgba(0,0,0,.12);
+      opacity: .9;
+    }
+
+    /* Door handle */
+    .door::after {
+      content: "";
+      position: absolute;
+      right: 14px;
+      top: 12px;
+      width: 26px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(26,32,44,.35);
+    }
+
+    /* Headlight */
+    .headlight {
+      position: absolute;
+      right: 44px;
+      bottom: 58px;
+      width: 28px;
+      height: 16px;
+      border-radius: 10px 14px 14px 10px;
+      background: linear-gradient(90deg, #fff7c2 0%, #ffd86b 60%, #ffb703 100%);
+      box-shadow: 0 0 14px rgba(255,200,60,.55);
+    }
+
+    /* Taillight */
+    .taillight {
+      position: absolute;
+      left: 44px;
+      bottom: 58px;
+      width: 18px;
+      height: 14px;
+      border-radius: 10px 8px 8px 10px;
+      background: linear-gradient(90deg, #ff6b6b 0%, #d90429 100%);
+      box-shadow: 0 0 10px rgba(217,4,41,.35);
+    }
+
+    /* Wheels */
+    .wheel {
+      position: absolute;
+      bottom: 12px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #2b2b2b 0%, var(--wheel) 55%, #000 100%);
+      box-shadow: 0 10px 16px rgba(0,0,0,.18);
+    }
+
+    .wheel.left { left: 90px; }
+    .wheel.right { right: 90px; }
+
+    /* Rim */
+    .wheel::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #ffffff 0%, var(--rim) 55%, #cbd5e1 100%);
+      box-shadow: inset 0 0 0 8px rgba(17,24,39,.18);
+    }
+
+    /* Lug nuts */
+    .wheel::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: rgba(17,24,39,.35);
+      box-shadow:
+        0 -16px 0 rgba(17,24,39,.35),
+        14px -8px 0 rgba(17,24,39,.35),
+        14px 8px 0 rgba(17,24,39,.35),
+        0 16px 0 rgba(17,24,39,.35),
+        -14px 8px 0 rgba(17,24,39,.35),
+        -14px -8px 0 rgba(17,24,39,.35);
+    }
+
+    /* A simple ground alignment helper */
+    .car-wrap {
+      display: grid;
+      place-items: center;
+    }
+
+    .caption {
+      margin: 10px 0 0;
+      font-size: 13px;
+      color: rgba(17,24,39,.65);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="car-wrap">
+      <div class="car" aria-label="A car drawn with CSS">
+        <div class="top"></div>
+        <div class="body"></div>
+        <div class="door"></div>
+        <div class="headlight"></div>
+        <div class="taillight"></div>
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+      </div>
+    </div>
+    <div class="road" aria-hidden="true"></div>
+    <p class="caption">Pure CSS car (divs + border-radius + gradients).</p>
+  </div>
+</body>
+</html>

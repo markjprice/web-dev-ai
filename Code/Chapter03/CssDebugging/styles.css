@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #f0f0f0;
+}
+
+.content {
+    width: 800px;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: row;
+    }
+}
