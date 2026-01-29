@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SVG Path Draw Animation</title>
+
+    <style>
+      svg {
+        width: 300px;
+        display: block;
+        margin: 40px auto;
+      }
+
+      .draw-path {
+        fill: none;
+        stroke: #1f5fbf;
+        stroke-width: 6;
+
+        /* The magic */
+        stroke-dasharray: 600;
+        stroke-dashoffset: 600;
+
+        animation: draw-line 2.5s ease-out forwards;
+      }
+
+      @keyframes draw-line {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+      <path
+        class="draw-path"
+        d="
+          M 20 60
+          C 60 10, 120 110, 170 60
+          C 220 10, 280 110, 330 60
+        "
+      />
+    </svg>
+
+  </body>
+</html>
