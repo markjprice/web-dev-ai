@@ -1,0 +1,105 @@
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  margin: 2rem;
+  line-height: 1.4;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #bbb;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eee;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #bbb;
+}
+
+.muted {
+  color: #666;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  background: #f2f2f2;
+  border: 1px solid #e1e1e1;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.success {
+  border-color: #9ad29a;
+  background: #f2fff2;
+}
+
+.warning {
+  border-color: #f0c36d;
+  background: #fff8e8;
+}
+
+.danger {
+  border-color: #f19a9a;
+  background: #fff1f1;
+}
+
+/* Theme support (used in an example) */
+body.dark {
+  background: #0f1115;
+  color: #e7e7e7;
+}
+
+body.dark .card {
+  background: #151924;
+  border-color: #2b3247;
+}
+
+body.dark button,
+body.dark input,
+body.dark select {
+  background: #0f1115;
+  color: #e7e7e7;
+  border-color: #2b3247;
+}
+
+body.dark .pill {
+  background: #1b2130;
+  border-color: #2b3247;
+}
+
+body.dark .muted {
+  color: #aab2c5;
+}

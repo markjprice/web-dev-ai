@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" 
+        content="width=device-width, initial-scale=1" />
+  <title>JavaScript Basics Playground</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    .row { margin: 0.75rem 0; }
+    .box { padding: 0.75rem; border: 1px solid #ccc; 
+           border-radius: 0.5rem; }
+    button { padding: 0.5rem 0.75rem; }
+    input { padding: 0.5rem; width: min(360px, 100%); }
+    code { background: #f6f6f6; padding: 0.1rem 0.3rem; 
+           border-radius: 0.25rem; }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Basics Playground</h1>
+
+  <div class="row box">
+    <p id="status">Status: Waiting for JavaScript…</p>
+    <p id="message">Message: (none)</p>
+    <p>Counter: <strong id="counterValue">0</strong></p>
+  </div>
+
+  <div class="row box">
+    <label for="nameInput">Your name:</label><br />
+    <input id="nameInput" type="text" placeholder="Type your name" />
+    <button id="helloBtn" type="button">Say hello</button>
+  </div>
+
+  <div class="row box">
+    <button id="incrementBtn" type="button">Increment counter</button>
+    <button id="resetBtn" type="button">Reset counter</button>
+  </div>
+
+  <div class="row box">
+    <p>Open Developer Tools Console to see logs.</p>
+  </div>
+
+  <!-- We’ll add scripts in the next blocks -->
+  <script src="code-order.js"></script>
+  <script src="variables.js"></script>
+  <script src="data-types.js"></script>
+  <script src="functions.js"></script>
+  <script src="conditionals.js"></script>
+  <script src="loops.js"></script>
+  <script src="events.js"></script>
+</body>
+</html>

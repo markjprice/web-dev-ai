@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOM Manipulation Playground</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>DOM Manipulation Playground</h1>
+  <p class="muted">Open Developer Tools Console. Reference one script example at a time at the bottom.</p>
+  <div class="grid">
+    <section class="card" aria-labelledby="card-status">
+      <h2 id="card-status">1) Status panel</h2>
+      <p id="statusText">Status: Waiting…</p>
+      <div class="row">
+        <button id="btnSetStatus" type="button">Set status</button>
+        <button id="btnClearStatus" type="button">Clear status</button>
+      </div>
+    </section>
+    <section class="card" aria-labelledby="card-profile">
+      <h2 id="card-profile">2) Profile editor</h2>
+      <div class="row">
+        <input id="nameInput" type="text" placeholder="Name" />
+        <select id="moodSelect">
+          <option value="neutral">Neutral</option>
+          <option value="productive">Productive</option>
+          <option value="sleepy">Sleepy</option>
+          <option value="chaotic">Chaotic</option>
+        </select>
+        <button id="btnApplyProfile" type="button">Apply</button>
+      </div>
+      <p>Preview: <strong id="profilePreview">Anonymous (neutral)</strong></p>
+    </section>
+    <section class="card" aria-labelledby="card-todo">
+      <h2 id="card-todo">3) Quick to-do list</h2>
+      <div class="row">
+        <input id="todoInput" type="text" placeholder="Add a task (e.g., ‘Refactor CSS’)" />
+        <button id="btnAddTodo" type="button">Add</button>
+        <button id="btnClearDone" type="button">Clear done</button>
+      </div>
+      <ul id="todoList" class="muted">
+        <li class="pill" data-done="false">
+          <input type="checkbox" aria-label="Mark done" />
+          <span>Write the first DOM example</span>
+          <button type="button" data-action="remove">Remove</button>
+        </li>
+      </ul>
+      <p class="muted" id="todoCount">0 items</p>
+    </section>
+    <section class="card" aria-labelledby="card-theme">
+      <h2 id="card-theme">4) Theme + visibility</h2>
+      <div class="row">
+        <button id="btnToggleTheme" type="button">Toggle theme</button>
+        <button id="btnToggleTodo" type="button">Show/Hide to-do card</button>
+      </div>
+      <p class="muted">This section is perfect for practicing class toggling and attribute changes.</p>
+    </section>
+  </div>
+  <script type="text/javascript" src="example1.js"></script>
+  <script type="text/javascript" src="example2.js"></script>
+  <script type="text/javascript" src="example3.js"></script>
+  <script type="text/javascript" src="example4.js"></script>
+  <script type="text/javascript" src="example5.js"></script>
+</body>
+</html>
