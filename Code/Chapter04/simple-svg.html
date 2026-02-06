@@ -1,31 +1,90 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" 
-          content="width=device-width, initial-scale=1" />
-    <title>My First SVG</title>
-    <style>
-      /* Just to make the SVG area obvious on the page */
-      .frame {
-        width: 320px;
-        padding: 12px;
-        border: 1px solid #ccc;
-      }
-      svg {
-        display: block;
-        border: 1px dashed #999;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>SVG Playground</h1>
-    <div class="frame">
-      <svg width="300" height="120" 
-           xmlns="http://www.w3.org/2000/svg">
-        <!-- Background rectangle -->
-        <rect x="10" y="10" width="280" height="100" fill="#f2f2f2" />
-      </svg>
-    </div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My First SVG</title>
+  <style>
+    /* Just to make the SVG area obvious on the page */
+    .frame {
+      width: 320px;
+      padding: 12px;
+      border: 1px solid #ccc;
+    }
+
+    svg {
+      display: block;
+      border: 1px dashed #999;
+      max-width: 220px;
+    }
+
+    .badge-base circle:first-child {
+      fill: #e6f4ea;
+      stroke: #1e8e3e;
+      stroke-width: 6;
+    }
+
+    .badge-base circle:last-child {
+      fill: white;
+    }
+
+    .badge-check line {
+      stroke: #1e8e3e;
+      stroke-width: 10;
+      stroke-linecap: round;
+    }
+
+    svg:hover .badge-base circle:first-child {
+      fill: #d2eadc;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>SVG Playground</h1>
+  <div class="frame">
+    <svg width="300" height="120" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background rectangle -->
+      <rect x="10" y="10" width="280" height="100" fill="#f2f2f2" />
+
+      <!-- Circle on top of the background -->
+      <circle cx="90" cy="60" r="35" fill="cornflowerblue" />
+
+      <!-- A line drawn on top of both -->
+      <line x1="100" y1="45" x2="280" y2="95" stroke="black" stroke-width="4" />
+    </svg>
+  </div>
+  <h2>Hands-on mini task</h2>
+  <div class="frame">
+    <svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer circle -->
+      <circle cx="90" cy="90" r="70" fill="#e6f4ea" stroke="#1e8e3e" stroke-width="6" />
+
+      <!-- Inner circle -->
+      <circle cx="90" cy="90" r="52" fill="white" />
+
+      <!-- Checkmark (two lines) -->
+      <line x1="60" y1="95" x2="82" y2="115" stroke="#1e8e3e" stroke-width="10" stroke-linecap="round" />
+      <line x1="82" y1="115" x2="122" y2="70" stroke="#1e8e3e" stroke-width="10" stroke-linecap="round" />
+    </svg>
+  </div>
+  <h2>Grouping example</h2>
+  <div class="frame">
+    <svg viewBox="0 0 180 180" width="180" xmlns="http://www.w3.org/2000/svg">
+      <!-- Badge background -->
+      <g class="badge-base">
+        <circle cx="90" cy="90" r="70" />
+        <circle cx="90" cy="90" r="52" />
+      </g>
+
+      <!-- Checkmark -->
+      <g class="badge-check" transform="rotate(-5 90 90)">
+        <line x1="60" y1="95" x2="82" y2="115" />
+        <line x1="82" y1="115" x2="122" y2="70" />
+      </g>
+    </svg>
+  </div>
+</body>
+
 </html>
