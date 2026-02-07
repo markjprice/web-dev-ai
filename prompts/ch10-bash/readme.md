@@ -1,0 +1,17 @@
+**Prompts for *Chapter 10 Shell/Bash* with links to responses**
+
+- [Please explain the difference between Bash, a shell, and a terminal, with concrete examples.](ch10-01.md)
+- [Why is Bash still widely used when newer shells like `zsh` and `fish` exist?](ch10-02.md)
+- [What does it mean that Bash is stateful, and how does that affect scripts?](ch10-03.md)
+- [Please explain the general structure of a Bash command: command name, options, and arguments.](ch10-04.md)
+- [What happens step by step when I type a command like ls -la into a terminal?](ch10-05.md)
+- [What are hidden files in Unix systems, and why do they start with a dot?](ch10-06.md)
+- [Please explain relative vs absolute paths in Bash using a directory tree example.](ch10-07.md)
+- [Why does `rm` not ask for confirmation by default, and how do experienced developers stay safe?](ch10-08.md)
+- [Please explain the shebang line in Bash scripts and why `/usr/bin/env bash` is recommended.](ch10-09.md)
+- [What does chmod +x actually change at the operating system level?](ch10-10.md)
+- [Why does my Bash script exit early when I use `set -e`?](ch10-11.md)
+- [Why does running the same Bash command sometimes work in one directory but fail in another?](ch10-12.md)
+- [What are common beginner mistakes in Bash scripts, and how can I spot them?](ch10-13.md)
+- [Please explain common Bash error messages like permission denied or command not found.](ch10-14.md)
+- [How can I safely debug a Bash script step by step?](ch10-15.md)
