@@ -48,6 +48,7 @@ TallyApp allows individuals or organizations to quickly gather structured feedba
 - Surveys can be cloned to create a new draft.
 - Surveys can be ended early.
 - Surveys may be open-ended (no end date).
+- Surveys consist of zero, one or more question items that can be added, edited, or removed via the survey edit page.
 
 ### Question Types
 Each survey can contain multiple questions of the following types:
@@ -57,17 +58,21 @@ Each survey can contain multiple questions of the following types:
 3. Text input (free-form)
 
 ### Public Survey Access
-- Public homepage lists published surveys (if “Show on homepage” is true).
+- Public homepage lists published surveys (if “Show on homepage” is true) with a public URL to take the survey.
 - Surveys support pagination on list views.
 - Public users can submit responses.
 - Surveys may display results “to date.”
-
+ 
 ### Results
 Survey creators can:
 - View aggregated results.
 - View individual responses.
 - View responses even while survey is still open.
 - View pie and bar charts for suitable results.
+
+### User Interface Styling
+- SVG assets for a logo and a survey sketch illustration used on editing pages.
+- The UI uses Pico.css as a baseline, plus a small override file to give TallyApp a subtle brand: gradient header or navbar, colorful logo SVG, light tinted background sections.
 
 ### Data Storage
 - SQLite database.
@@ -150,8 +155,8 @@ Survey creators can:
 
 ## 7. Technical Constraints
 
-- Python 3.12
-- Django 5.x
+- Python 3.14
+- Django 6.x
 - SQLite database
 - Clean, modern, responsive UI
 - Server-rendered templates
@@ -185,7 +190,7 @@ Survey creators can:
 ## 10. Future Enhancements (Not Version 1)
 
 - CSV export
-- Charts and visual analytics
+- More advanced visual analytics
 - Survey scheduling automation
 - Email invitations
 - API endpoints
