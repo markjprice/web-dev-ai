@@ -15,28 +15,34 @@ TallyApp allows individuals or organizations to quickly gather structured feedba
 ## 2. Target Users
 
 ### Survey Creators
-- Must register for an account.
+- Must register for an account with a valid email address.
 - Must be approved by an administrator before creating surveys.
-- Can create, publish, clone, and end surveys.
+- Can create, publish, and end surveys.
 - Can view results (individual and aggregated).
 
 ### Survey Respondents
 - Do not need to register.
 - Can submit responses anonymously.
-- May optionally provide an email identifier.
+
+### Home Page for Target Users
+- Describes functionality of website.
+- Two large buttons to:
+    1. Create a Survey (Register or Log In)
+    2. Take a Survey
 
 ---
 
 ## 3. Core Features (Version 1 Scope)
 
 ### Authentication & Authorization
-- User registration.
-- Admin approval required before users can create surveys.
+- Define a custom group named SurveyCreator whose membership authorizes survey creation functionality.
+- Survey Creator registration.
+- Admin approval required before users can create surveys; users are added to SurveyCreator group when approved.
 - Login and logout.
-- Only approved users can create surveys.
+- Only members of SurveyCreator group can create surveys.
 
 ### Survey Creation
-- Create a survey with:
+- Create or edit a survey with:
   - Title
   - Description
   - Start date
@@ -56,6 +62,7 @@ Each survey can contain multiple questions of the following types:
 1. Multiple choice – single answer
 2. Multiple choice – multiple answers
 3. Text input (free-form)
+4. Matrix ratings with range of ratings e.g. 1 to 5 for one or more items
 
 ### Public Survey Access
 - Public homepage lists published surveys (if “Show on homepage” is true) with a public URL to take the survey.
@@ -69,10 +76,11 @@ Survey creators can:
 - View individual responses.
 - View responses even while survey is still open.
 - View pie and bar charts for suitable results.
+- View report of any duplicate submissions per email/IP/session.
 
-### User Interface Styling
+### Graphics, styling and branding
 - SVG assets for a logo and a survey sketch illustration used on editing pages.
-- The UI uses Pico.css as a baseline, plus a small override file to give TallyApp a subtle brand: gradient header or navbar, colorful logo SVG, light tinted background sections.
+- The UI uses CSS and SVG files to give TallyApp a subtle brand: gradient header or navbar, colorful logo SVG, light tinted background sections.
 
 ### Data Storage
 - SQLite database.
@@ -84,6 +92,8 @@ Survey creators can:
   - Permissions
   - Publishing rules
   - Survey response submission
+- End-to-end tests using Playwright for:
+  - Each user story.
 
 ---
 
@@ -102,21 +112,20 @@ Survey creators can:
 
 ## 5. User Stories
 
-- As a user, I want to register so that I can create surveys.
-- As an admin, I want to approve users before they create surveys.
-- As an approved user, I want to create and publish a survey.
-- As a survey creator, I want to clone an existing survey.
-- As a survey creator, I want to end a survey early.
-- As a public visitor, I want to complete a survey without registering.
-- As a survey creator, I want to see both aggregated results and individual responses.
+1. As a user, I want to register so that I can create surveys.
+2. As an admin, I want to approve users before they create surveys.
+3. As an approved user, I want to create and publish a survey.
+4. As a survey creator, I want to end a survey early.
+5. As a public visitor, I want to complete a survey without registering.
+6. As a survey creator, I want to see both aggregated results and individual responses.
 
 ---
 
 ## 6. Data Model (High-Level)
 
 ### User
-- Uses Django’s built-in User model.
-- Has an additional flag indicating approval status.
+- Extends Django’s built-in User model.
+- Has a custom group named SurveyCreators whose membership gives access to create, edit and delete survey features.
 
 ### Survey
 - Creator (ForeignKey to User)
@@ -167,10 +176,10 @@ Survey creators can:
 ## 8. Security & Permissions
 
 - Only approved users can create surveys.
-- Only survey creators can view their own results.
+- Only survey creators (and administrators) can view the results of their own surveys.
 - Public users can submit responses.
 - Surveys cannot be modified after publishing.
-- Only admins can approve users.
+- Only admins can approve users to create surveys.
 
 ---
 
