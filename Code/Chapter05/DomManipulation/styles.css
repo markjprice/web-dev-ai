@@ -64,6 +64,7 @@ select {
 .success {
   border-color: #9ad29a;
   background: #f2fff2;
+  opacity: 0.75;
 }
 
 .warning {

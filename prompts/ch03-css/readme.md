@@ -1,4 +1,17 @@
 **Prompts for *Chapter 3 CSS* with links to responses**
 
-1. [What does the selector `a:hover` do?](./ch03-01.md)
-2. 
+1. [Please explain the CSS cascade with real examples showing conflicts between element, class, and ID selectors. Show me examples where CSS rules conflict and explain why one wins over another.](ch03-01.md)
+2. [What is CSS specificity and how is it calculated step by step?](ch03-02.md)
+3. [Please explain the difference between margin, padding, and border with visual examples and common mistakes.](ch03-03.md)
+4. [What does the selector `a:hover` do?](ch03-04.md)
+5. [Please explain inheritance in CSS and which properties inherit by default.](ch03-05.md)
+6. [Please explain the color functions `rgb`, `rgba`, `hsl`, and `hsla`, especially how to set alpha or transparency.](ch03-06.md)
+7. [How do I check if my color contrast meets WCAG standards? What CSS techniques improve accessibility beyond color contrast?](ch03-07.md)
+8. [Please explain px vs %, em, and rem with practical examples and when to use each. How do rem and em behave differently in nested elements? Please include an example to show how em compounds but rem does not.](ch03-08.md)
+9. [Please explain how display: flex works and what flex-direction, justify-content, and align-items do, including the difference between gap and margin.](ch03-09.md)
+10. [What are common mistakes that break responsive layouts?](ch03-10.md)
+11. [Please explain media queries with multiple breakpoints and real examples.](ch03-11.md)
+12. [What is mobile-first design and why is it better than desktop-first?](ch03-12.md)
+13. [Why are transforms better than using margin or position for animations?](ch03-13.md)
+14. [Which CSS properties are safe to animate for performance and why?](ch03-14.md)
+

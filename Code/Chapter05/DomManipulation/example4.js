@@ -8,7 +8,6 @@ function updateCount() {
 function syncDoneStyles(li) {
   const done = li.dataset.done === "true";
   li.classList.toggle("success", done);
-  li.style.opacity = done ? "0.75" : "1";
 }
 
 todoList.addEventListener("click", (event) => {
