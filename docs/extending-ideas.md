@@ -45,3 +45,6 @@ The main extended addition might be storing pre-created analysis data to improve
 # Extended analysis app requirements
 
 If you have data science skills, then you could integrate the machine learning (ML) libraries to add ML algorithms to process survey results to reveal interesting insights that humans might overlook.
+
+> **Prompt**: What are common signs of feature creep in small web projects, and how can I prevent them? Please give me some real-world examples of MVP vs V1 vs V2 scope in SaaS products.
+> https://github.com/markjprice/web-dev-ai/blob/main/prompts/ch13-env/ch13-07.md
