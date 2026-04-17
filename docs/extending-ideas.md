@@ -1,5 +1,12 @@
 **Extending Ideas**
 
+- [Extended website requirements](#extended-website-requirements)
+- [Extended question item types](#extended-question-item-types)
+- [Extended survey design requirements](#extended-survey-design-requirements)
+- [Extended data storage requirements](#extended-data-storage-requirements)
+- [Extended analysis app requirements](#extended-analysis-app-requirements)
+
+
 # Extended website requirements
 
 A visitor should be able to register with the website and store basic profile information, like a contact email address, demographical details, and a list of the surveys that they have taken. This information should follow good practice in allowing the visitor to update and delete their data at any time.
@@ -18,7 +25,7 @@ The website could support the following additional question types:
 
 Each item type should allow a rich text question for each item and allow arbitrary rich text and images throughout a survey.
 SurveyMonkey keeps the cool item types for the paid tiers, as shown in *Figure 13.3*:
-![]()
+![Upgrade SurveyMonkey to unlock most item types](B34553_13_03.png)
 *Figure 13.3: Upgrade SurveyMonkey to unlock most item types*
 
 # Extended survey design requirements
