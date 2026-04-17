@@ -1,4 +1,4 @@
-**Prompts for *Chapter 15 Deployment* with links to responses**
+**Prompts for *Chapter 15 Deploying to Public Servers* with links to responses**
 
 - [Please explain the difference between a web server, application server, and database in a Django deployment, with a real-world analogy.](ch15-01.md)
 - [What is WSGI and how does it compare to ASGI in modern Python web apps? When would I choose ASGI (e.g. Daphne/Uvicorn) instead of Gunicorn?](ch15-02.md)

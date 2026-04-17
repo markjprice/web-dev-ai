@@ -1,3 +1,17 @@
-**Prompts for *Chapter 13 ?* with links to responses**
+**Prompts for *Chapter 14 Adding Project Features Using Spec-Driven Development* with links to responses**
 
-- [](ch13-01.md)
+- [Why do AI coding assistants tend to make incorrect assumptions when specifications are incomplete? Describe the risks of vague requirements when using AI coding assistants.](ch14-01.md)
+- [Please explain why “non-goals” are important in software specifications and give examples from real-world projects.](ch14-02.md)
+- [Please show me some examples of poorly written acceptance criteria and how to rewrite them into clear, testable requirements.](ch14-03.md)
+- [Please give examples of edge cases developers often forget when writing specifications. Please explain how to identify hidden assumptions in a software specification.](ch14-04.md)
+- [Please explain how spec-driven development differs from test-driven development (TDD) and behavior-driven development (BDD). Include a side-by-side comparison of spec-driven development, TDD, and BDD, including strengths and weaknesses of each approach.](ch14-05.md)
+- [Please explain how Spec Kit helps prevent AI coding assistants from introducing unintended features.](ch14-06.md)
+- [Please explain how URL shorteners work internally. Describe the algorithms commonly used to generate short URL codes and compare random code generation with hash-based URL shortening.](ch14-07.md)
+- [Please explain how GitHub Spec Kit works internally and what files it generates in a project repository. Show the directory structure created by Spec Kit and explain the purpose of each file.](ch14-08.md)
+- [How should developers structure prompts when asking AI to generate an implementation plan?](ch14-09.md)
+- [Please explain how developers can review AI-generated code effectively.](ch14-10.md)
+- [Design a specification for geographic survey responses using a map interface.](ch14-11.md)
+- [Design a specification for drag-and-drop ranking questions in a survey app and explain the data modeling challenges involved in ranking questions.](ch14-12.md)
+- [Design a specification for adding branching logic to a survey system.](ch14-13.md)
+- [Explain how WebSockets could be used to create real-time survey response dashboards.](ch14-14.md)
+- [Please show me how to add theming support to a Django web application.](ch14-15.md)

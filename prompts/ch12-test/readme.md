@@ -1,3 +1,21 @@
-**Prompts for *Chapter 12 Tests* with links to responses**
+**Prompts for *Chapter 12 Unit, Integration, and End-to-End Testing* with links to responses**
 
-- [](ch132-01.md)
+- [Please explain the historical origins of the testing pyramid and how it differs from the testing trophy model. What are real-world examples of teams that inverted the testing pyramid and what problems did they face?](ch12-01.md)
+- [What makes a good unit test beyond Arrange–Act–Assert? Give examples of bad but syntactically correct tests.](ch12-02.md)
+- [Please explain the difference between confidence, coverage, and correctness in software testing.](ch12-03.md)
+- [How does Django’s test runner create and destroy the test database internally?](ch12-04.md)
+- [Please explain the difference between `TestCase`, `TransactionTestCase`, `SimpleTestCase`, and `LiveServerTestCase` in Django.](ch12-05.md)
+- [Why do many professional Django teams prefer `pytest` over `unittest`? Please include a comparison of the same Django test written in `unittest` style and `pytest` style.](ch12-06.md)
+- [What is parametrized testing in `pytest` and when is it useful?](ch12-07.md)
+- [What does 100 percent code coverage fail to tell you? What is branch coverage versus line coverage? How does `coverage.py` work internally?](ch12-08.md)
+- [What are the most common mistakes developers make when writing integration tests?](ch12-09.md)
+- [Please explain how to test database constraints and unique indexes, and race conditions or concurrency issues properly in Django.](ch12-10.md)
+- [Please compare Playwright and Selenium in terms of architecture and reliability.](ch12-11.md)
+- [What is the Page Object Model and should I use it with Playwright?](ch12-12.md)
+- [What are the risks of overusing shared fixtures in large projects?](ch12-13.md)
+- [Please compare factory_boy, pytest fixtures, and Django fixtures with pros and cons.](ch12-14.md)
+- [Why do some teams resist writing tests? How do you introduce testing discipline into a team that has none? Please explain the economic argument for automated testing.](ch12-15.md)
+- [What is the difference between continuous integration, continuous delivery, and continuous deployment?](ch12-16.md)
+- [What are research findings about AI-generated tests and their reliability?](ch12-17.md)
+- [Please show examples of weak AI-generated tests and how to improve them.](ch12-18.md)
+- [Please explain how to design prompts that generate higher-quality automated tests.](ch12-19.md)

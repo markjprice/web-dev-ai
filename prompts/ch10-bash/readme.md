@@ -1,4 +1,4 @@
-**Prompts for *Chapter 10 Shell/Bash* with links to responses**
+**Prompts for *Chapter 10 Bash/Shell – Command-Line Power for Developers* with links to responses**
 
 - [Please explain the difference between Bash, a shell, and a terminal, with concrete examples.](ch10-01.md)
 - [Why is Bash still widely used when newer shells like `zsh` and `fish` exist?](ch10-02.md)
