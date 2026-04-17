@@ -34,15 +34,13 @@ The minimal product stores the surveys and their question items but does not pro
 
 This will require authentication and authorization checks. The create and edit functionality could get quite complex because showing a question item is easier than providing an editing experience for one.
 
-> **Prompt**: Explain how Django’s Group and Permission system works internally.
-> https://github.com/markjprice/web-dev-ai/blob/main/prompts/ch13-env/ch13-05.md
+> **Prompt**: [Explain how Django’s Group and Permission system works internally.](https://github.com/markjprice/web-dev-ai/blob/main/prompts/ch13-env/ch13-05.md)
 
 Either a website or app should provide a friendly survey creation and editing experience that closely matches what the survey taker would experience. In other words, a what-you-see-is-what-you-get editing experience.
 
 For a survey tool that will be sold commercially, the organizations will want to brand their surveys with logos, images, colors, and so on.
 
-> **Prompt**: How would the TallyApp scope change if it were a paid SaaS product?
-> https://github.com/markjprice/web-dev-ai/blob/main/prompts/ch13-env/ch13-06.md
+> **Prompt**: [How would the TallyApp scope change if it were a paid SaaS product?](https://github.com/markjprice/web-dev-ai/blob/main/prompts/ch13-env/ch13-06.md)
 
 # Extended data storage requirements
 Even with a minimal product, the data storage requirements need to be flexible enough to store multiple different item types, a flexible number of items per survey, and the responses when someone takes a survey.
@@ -53,5 +51,4 @@ The main extended addition might be storing pre-created analysis data to improve
 
 If you have data science skills, then you could integrate the machine learning (ML) libraries to add ML algorithms to process survey results to reveal interesting insights that humans might overlook.
 
-> **Prompt**: What are common signs of feature creep in small web projects, and how can I prevent them? Please give me some real-world examples of MVP vs V1 vs V2 scope in SaaS products.
-> https://github.com/markjprice/web-dev-ai/blob/main/prompts/ch13-env/ch13-07.md
+> **Prompt**: [What are common signs of feature creep in small web projects, and how can I prevent them? Please give me some real-world examples of MVP vs V1 vs V2 scope in SaaS products.](https://github.com/markjprice/web-dev-ai/blob/main/prompts/ch13-env/ch13-07.md)
