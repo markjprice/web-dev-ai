@@ -1,4 +1,4 @@
-**Prompts for *Chapter 3 CSS* with links to responses**
+**Prompts for *Chapter 3 CSS – Styling Your Webpages* with links to responses**
 
 1. [Please explain the CSS cascade with real examples showing conflicts between element, class, and ID selectors. Show me examples where CSS rules conflict and explain why one wins over another.](ch03-01.md)
 2. [What is CSS specificity and how is it calculated step by step?](ch03-02.md)
@@ -14,4 +14,3 @@
 12. [What is mobile-first design and why is it better than desktop-first?](ch03-12.md)
 13. [Why are transforms better than using margin or position for animations?](ch03-13.md)
 14. [Which CSS properties are safe to animate for performance and why?](ch03-14.md)
-

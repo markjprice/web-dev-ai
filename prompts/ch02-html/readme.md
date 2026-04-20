@@ -1,4 +1,4 @@
-**Prompts for *Chapter 2 HTML* with links to responses**
+**Prompts for *Chapter 2 HTML – Structuring Your Webpages* with links to responses**
 
 1. [Please explain the difference between semantic HTML and non-semantic HTML with real-world examples and why it matters for accessibility.](ch02-01.md)
 2. [Please show me examples of good and bad HTML structure and explain what makes one better than the other.](ch02-02.md)
@@ -13,4 +13,3 @@
 11. [Please quiz me about the new tags introduced with HTML5. Focus mainly on understanding the concepts rather than memorizing exact syntax.](ch02-11.md)
 12. [Please explain why HTML is forgiving but XML is strict, with examples.](ch02-12.md)
 13. [Where does XHTML fit in the history of markup languages?](ch02-13.md)
-
