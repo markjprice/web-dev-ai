@@ -1,12 +1,12 @@
 > **IMPORTANT!** [Common Mistakes, Improvements, and Errata aka list of corrections](docs/errata/README.md)
 
-# Web Dev with an AI Copilot, First Edition
+# Web Dev with an AI Sidekick, First Edition
 
-Repository for the Packt Publishing book titled *Web Dev with an AI Copilot* by Mark J. Price.
+Repository for the Packt Publishing book titled *Web Dev with an AI Sidekick* by Mark J. Price.
 
 > **[FAQs](https://github.com/markjprice/markjprice/blob/main/FAQs.md)**
 
-- [Web Dev with an AI Copilot, First Edition](#web-dev-with-an-ai-copilot-first-edition)
+- [Web Dev with an AI Sidekick, First Edition](#web-dev-with-an-ai-sidekick-first-edition)
 - [Free PDF/ePub of the book and how to contact the publisher Packt](#free-pdfepub-of-the-book-and-how-to-contact-the-publisher-packt)
 - [Author's books](#authors-books)
 - [Chapters and code projects](#chapters-and-code-projects)
@@ -31,30 +31,30 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 # Chapters and code projects
 
 **Introduction**
-- Chapter 1, Introduction to Web Development with an AI Copilot
+- Chapter 1, Introduction to Web Development with an AI Sidekick
 
-**Part 1: Front-End Web Development**
+**Part 1: Frontend Web Development**
 - Chapter 2, HTML – Structuring Your Webpages [Code/Chapter2](Code/Chapter2)
 - Chapter 3, CSS – Styling Your Webpages [Code/Chapter3](Code/Chapter3)
-- Chapter 4, SVG – Creating Scalable Graphics [Code/Chapter4](Code/Chapter4)
+- Chapter 4, SVG – Drawing Scalable Graphics [Code/Chapter4](Code/Chapter4)
 - Chapter 5, JavaScript – Making Webpages Interactive [Code/Chapter5](Code/Chapter5)
 - Chapter 6, TypeScript – Safer JavaScript [Code/Chapter6](Code/Chapter6)
 
-**Part 2: Back-End Web Development**
+**Part 2: Backend Web Development**
 - Chapter 7, SQL – Managing Data [Code/Chapter7](Code/Chapter7)
 - Chapter 8, Python – Programming on the Backend [Code/Chapter8](Code/Chapter8)
-- Chapter 9, Django – Web Development on the Server [Code/Chapter9](Code/Chapter9)
-- Chapter 10, Bash – Command-Line Power for Developers [Code/Chapter10](Code/Chapter10)
+- Chapter 9, Django – Web Development on the Backend [Code/Chapter9](Code/Chapter9)
+- Chapter 10, Bash/Shell – Command-Line Power for Developers [Code/Chapter10](Code/Chapter10)
 
-**Part 3: Tally Project** [Code/TallyProject](Code/TallyProject)
-- Chapter 11, Project Setup – Your Development Environment
-- Chapter 12, Containerization and Testing
+**Part 3: Survey Project** [Code/TallyApp](Code/TallyApp)
+- Chapter 11, Setting Up Your Project Environment
+- Chapter 12, Unit, Integration, and End-to-End Testing
 - Chapter 13, Specifying and Building the Initial Project
-- Chapter 14, Adding Features Using Spec-Driven Development
-- Chapter 15, Deploying to a Host Server
+- Chapter 14, Adding Project Features Using Spec-Driven Development
+- Chapter 15, Deploying to Public Servers
 
 **Appendix**
-- [*Appendix, Answers to the Test Your Knowledge Questions*](docs/B34553_Appendix%20A.pdf)
+- [Answers to the *Check your understanding* questions*](docs/B34553_Appendix%20A.pdf)
 - Appendices are included with your purchase. Visit https://packtpub.com/unlock, then use the search bar to find this book by name. Double-check the edition shown to make sure you get the right one.
 
 # Online content
