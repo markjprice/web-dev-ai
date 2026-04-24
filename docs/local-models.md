@@ -1,6 +1,6 @@
-**Configuring a free local LLM**
+**Configuring a "free" local LLM**
 
-- [Configuring a free local LLM](#configuring-a-free-local-llm)
+- [Configuring a "free" local LLM](#configuring-a-free-local-llm)
 - [What is Ollama?](#what-is-ollama)
 - [Models, size, and capabilities](#models-size-and-capabilities)
 - [What is quantization?](#what-is-quantization)
@@ -8,9 +8,15 @@
 - [Ollama CLI](#ollama-cli)
 - [Integrating Ollama with VS Code](#integrating-ollama-with-vs-code)
 - [Running local models with LM Studio](#running-local-models-with-lm-studio)
+- [Setting expectations for the local versus cloud](#setting-expectations-for-the-local-versus-cloud)
+  - [$2,000 range (high-end consumer desktop or laptop)](#2000-range-high-end-consumer-desktop-or-laptop)
+  - [$5,000 range (serious workstation)](#5000-range-serious-workstation)
+  - [$10,000-$20,000 range (enthusiast and semi-professional multi-GPU)](#10000-20000-range-enthusiast-and-semi-professional-multi-gpu)
+  - [$50,000 range (small lab or startup setup)](#50000-range-small-lab-or-startup-setup)
+- [Local model cost summary](#local-model-cost-summary)
 
 
-# Configuring a free local LLM
+# Configuring a "free" local LLM
 
 This path is for readers who want to avoid API costs and keep prompts and responses local. In practice, you still sign into GitHub to use Copilot in VS Code, but you can run the model inference locally through Ollama for supported chat experiences. 
 
@@ -231,3 +237,59 @@ The line "Why is Gamora?" is said by Drax, a character from the movie Avengers: 
 Cloud-based AI coding assistants tend to be more capable overall because they run on larger, frequently updated models with access to broader training data and higher compute, which usually translates into better code generation, deeper reasoning, and faster improvements over time. 
 
 Local models, by contrast, offer stronger privacy, lower latency, and full control over the environment, but they are typically smaller and less accurate unless you have access to high-end hardware and invest time in tuning them. In practice, cloud models are generally more effective for complex or unfamiliar tasks, while local models are better suited to sensitive codebases or situations where offline access and data control matter more than peak performance.
+
+# Setting expectations for the local versus cloud
+
+Local models are great for routine refactors, test scaffolding, and explain this codebase tasks. They will likely always be weaker at deep reasoning than the state of the art (SOTA) cloud models and be about 6-12 months behind in capabilities even if you spend tens of thousands of dollars on local hardware. 
+
+Top cloud models (SOTA):
+- Equivalent to ~100B–1T+ parameter systems (mixture-of-experts)
+- Trained on massive proprietary datasets
+- Run on multi-GPU clusters with huge memory bandwidth
+
+What that means in practice:
+- Strong reasoning across long contexts
+- Reliable multi-file code generation
+- Better debugging and architectural decisions
+- Fewer hallucinations (still not zero)
+
+Local setups do not match this today. Let’s compare some real-world examples of hardware options for local models.
+
+## $2,000 range (high-end consumer desktop or laptop)
+
+Typical hardware would be a decent desktop CPU or Apple Silicon (M2/M3), 16–32 GB RAM, and RTX 4060 / 4070 (8–12 GB VRAM) discrete GPU or unified memory on Mac.
+With that you can run 7B–13B models (quantized, 4-bit or 8-bit) like LLaMA 3 8B, Mistral 7B, Gemma 7B. This is good for code completion, small function generation, explaining code, basic refactoring, but is weak at multi-file reasoning, complex debugging, long context tasks, performance feel. It would make occasional dumb mistakes and it needs a lot of supervision. Many developers would feel disappointed with the experience.
+
+## $5,000 range (serious workstation)
+
+Typical hardware would be a RTX 4090 (24 GB VRAM) GPU, 64 GB RAM, and a strong CPU.
+With that you can run 13B–34B models comfortably or 70B models with quantization (but this is slower). This is good for medium-sized code generation, unit tests, refactors, some architectural reasoning, but it still struggles with deep multi-step reasoning, large codebases, and performance feel is fast for 13B/34B models but 70B models are usable but slower.
+
+## $10,000-$20,000 range (enthusiast and semi-professional multi-GPU)
+
+Typical hardware would be 1–4 × RTX 4090 or workstation GPUs (A6000 class) and 128-256 GB RAM.
+With that you can run 70B models are reasonable-to-good speed with better context handling. Some larger models can be used with aggressive quantization. This is good for real development workflows, multi-file understanding, solid refactoring and code generation. But it is still weaker at subtle reasoning, edge-case debugging, and performance feel finally becomes decent. This means that you can rely on it for daily development tasks.
+
+## $50,000 range (small lab or startup setup)
+
+Typical hardware would be 4–8 high-end GPUs (A100 / H100 class or equivalents) with high-bandwidth interconnects and 256 GB+ RAM.
+With that you can run 70B+ models at high speed and larger open models (depending on VRAM). Fine-tune training your own custom models becomes realistic. This is very strong at coding tasks, internal tools, domain-specific fine-tuned models, but it is still weaker than cloud at frontier reasoning, general intelligence breadth, and performance feel is fast, powerful, production-capable so it can replace cloud for many internal tasks.
+Summary of local model ability to replace cloud models
+
+# Local model cost summary
+
+Even at $50,000 or more you are still not running anything close to GPT-5.5 or Claude Opus 3.7 internally. You are running smaller, distilled, or open-weight models. The gap is not just hardware. It is training data, model architecture, reinforcement tuning, and ongoing updates.
+
+It is dangerously easy to get excited while reading Reddit posts about all the developers who are buying up Mac Studios with M-class Ultras and 512 GB unified memory, or multi-GPU rack-mounted setups in their basements. Yes, it’s cool for experienced developers who already have well-paying employment with excess income to spend on expensive hobbies, but if you’re a beginner at programming, it’s literally a dream, not reality! I don’t want to be a killjoy but temper your expectations.
+
+Despite all that, local setups are better in specific areas:
+- **Privacy**: No code leaves your machine. Essential for proprietary or sensitive work
+- **Cost (long-term)**: No per-token billing. Heavy usage becomes cheaper over time
+- **Latency**: Instant response for small models. No network dependency
+- **Control**: You can fine-tune. You can customize behavior
+
+As usual, the best option is to do both, appropriately:
+- Use cloud models for hard problems like design and architectural decisions that involve multi-step reasoning, large context, ambiguity, or real-world consequences
+- Use local models for speed, privacy, and routine tasks like writing small functions, explaining syntax, generating boilerplate, refactoring a single file, and writing tests
+
+> **Good practice**: If the task requires judgment, not just generation, use a cloud model.
