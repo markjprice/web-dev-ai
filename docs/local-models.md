@@ -1,0 +1,233 @@
+**Configuring a free local LLM**
+
+- [Configuring a free local LLM](#configuring-a-free-local-llm)
+- [What is Ollama?](#what-is-ollama)
+- [Models, size, and capabilities](#models-size-and-capabilities)
+- [What is quantization?](#what-is-quantization)
+- [Downloading and running Ollama models](#downloading-and-running-ollama-models)
+- [Ollama CLI](#ollama-cli)
+- [Integrating Ollama with VS Code](#integrating-ollama-with-vs-code)
+- [Running local models with LM Studio](#running-local-models-with-lm-studio)
+
+
+# Configuring a free local LLM
+
+This path is for readers who want to avoid API costs and keep prompts and responses local. In practice, you still sign into GitHub to use Copilot in VS Code, but you can run the model inference locally through Ollama for supported chat experiences. 
+
+# What is Ollama?
+
+Ollama is a software tool designed for managing LLMs on local devices. This tool allows users to run sophisticated language models, such as LLaMA (Large Language Model Meta AI), on their own machines rather than relying solely on cloud-based solutions.
+By running models locally, Ollama ensures that sensitive data remains on the user's device, enhancing privacy and security compared to cloud-based services. Users maintain full ownership and control over their data, which is particularly important for sensitive or proprietary information.
+
+Developers and researchers can use Ollama to experiment with and fine-tune LLMs without the need for cloud resources. Running models locally can be more cost-effective in the long run, as it eliminates the need for continuous cloud service subscriptions. However, local installations require ongoing maintenance and updates, which can be more complex compared to managed cloud services.
+
+To run LLMs locally, users need powerful hardware, typically including high-end CPUs, significant RAM, and often graphics processing units (GPUs) to handle the intensive computation. Running models locally reduces latency, which is critical for applications requiring immediate responses. LLMs are resource-intensive, and not all users may have the necessary hardware to run them efficiently.
+
+Ollama aims to simplify the installation and setup process, providing tools and documentation to help users get started with minimal friction.
+
+# Models, size, and capabilities
+
+Models often come in multiple variations, typically by size and capability. For example:
+- The `mistral:instruct` model follows instructions.
+- The `mistral:text` model is the base foundation model without any fine-tuning for conversations and is best used for simple text completion.
+- `llama` and `llama:70b` vary by size.
+
+Smaller models like llama can perform adequately for less complex tasks like basic text generation, simple question answering, and summarization. For applications requiring real-time responses like chatbots, smaller models are generally better due to lower inference latency. 
+
+More complex tasks such as nuanced understanding, detailed reasoning, and generating longer, coherent text may benefit from larger models like llama:70b. But larger models require significantly more computational power and memory for both training and inference. Also consider that sometimes a smaller, fine-tuned model can outperform a larger, general-purpose model in specific domains.
+
+When you see names like 7B, 8B, or 70B next to a language model, the B stands for billion parameters. A parameter is simply a number inside the neural network that helps determine how it responds to input. You can think of parameters as adjustable dials the model learned during training.
+
+A 7B model has about 7 billion parameters. A 70B model has ten times as many.
+
+In general:
+- More parameters gives better reasoning, nuance, and long-form coherence
+- Fewer parameters gives faster responses and lower hardware requirements
+
+However, larger models require dramatically more memory (RAM or GPU VRAM) to run. A 70B model can require tens of gigabytes of memory, while a 7B model can run on a modern laptop with enough RAM.
+
+> **Prompt**: What hardware specs are realistically required to run a 7B model smoothly? Explain quantization in local LLMs and how it affects performance and quality.
+
+# What is quantization?
+
+Quantization is a way of compressing a model so it uses less memory and runs faster. By default, model weights are stored as high-precision numbers (often 16-bit or 32-bit floating-point values). Quantization reduces the precision of those numbers, for example: 16-bit → 8-bit, or 8-bit → 4-bit. This makes the model much smaller in memory.
+
+Think of it like saving an image:
+- A RAW image file is large and very precise.
+- A JPEG is smaller but slightly less accurate.
+- A heavily compressed JPEG is much smaller but may lose visible detail.
+
+Quantized models are like compressed JPEGs of neural networks. They are smaller and faster, but may lose some subtle reasoning ability. If you are running a model locally with Ollama or LM Studio:
+- A full-precision 7B model might require 14–16 GB of memory.
+- A 4-bit quantized 7B model might fit in 4–6 GB.
+
+This is often the difference between won’t run on your laptop and runs comfortably. Most local LLM setups use quantized versions by default because they are far more practical for everyday development work. For typical developer tasks like generating boilerplate, writing unit tests, explaining code, and refactoring small functions, a 7B or 8B quantized model is often more than sufficient.
+
+For deep architectural reasoning, long multi-file analysis, and subtle debugging, larger cloud-hosted models still have an advantage. To run larger models locally requires a lot of costly hardware, like an NVIDIA DGX Spark, multi-GPU desktop or rack, or a Mac Studio with hundreds of gigabytes of unified memory. 
+
+> **Prompt**: Please compare llama3.1 8B versus 70B for coding tasks. What practical differences would I see?
+
+# Downloading and running Ollama models
+
+To quickly download and run an Ollama model in interactive mode, use the following command:
+```shell
+ollama run <model>
+```
+
+The most common models supported by Ollama include those shown in *Table 11.2*:
+
+Model|Parameters|Size
+---|---|---
+deepseek-r1|7 B|4.7 GB
+llama3.3|70 B|40 GB
+llama3.2|3 B|2.0 GB
+llama3.1|8 B|4.9 GB
+codellama|7 B|3.8 GB
+llama2-uncensored|7 B|3.8 GB
+phi3|3.8 B|2.3 GB
+mistral|7 B|4.1 GB
+gemma:7b|7 B|4.8 GB
+gemma:2b|2 B|1.4 GB
+
+*Table 11.2: Common Ollama models*
+
+*Uncensored* in the context of LLMs means the model operates without predefined restrictions on the content it can generate, allowing for a broader range of output but also increasing the risks associated with harmful or inappropriate content. This characteristic makes uncensored models potentially valuable for research and development, or to help a standup comic write jokes, but it also requires careful consideration of the ethical and practical implications of using such a model in real-world applications.
+
+We will use Meta’s Llama 3.1 model for its versatility and to maximize the likelihood that it will run okay on your computer. You can read the license agreement at the following link: https://www.llama.com/llama3/license/.
+
+# Ollama CLI
+
+The Ollama CLI provides a range of commands to manage and run LLMs locally. While the exact commands and options may vary depending on the version of Ollama and its implementation, the following is a general overview of common CLI commands and their typical usage.
+
+Let's explore what you can do with the Ollama CLI with the Llama 3 model:
+1.	At the command prompt or terminal, enter the command to check its version, as shown in the following command:
+```shell
+ollama --version
+```
+2.	Note the response, as shown in the following output:
+```
+ollama version is 0.13.5
+```
+3.	At the command prompt or terminal, enter the command to pull down a named model like Meta’s Llama3 or Google’s Gemma3, as shown in the following command:
+```shell
+ollama pull gemma3:1b
+```
+> You can see the Llama3 models at the following link: https://ollama.com/library/llama3. You can see all the Gemma3 models at the following link: https://ollama.com/library/gemma3.
+
+4.	Note the response, as shown in the following output:
+```
+pulling manifest
+pulling 6a0746a1ec1a... 100% ▕████████████████████████████████████████████████████████▏ 4.7 GB
+pulling 4fa551d4f938... 100% ▕████████████████████████████████████████████████████████▏  12 KB
+pulling 8ab4849b038c... 100% ▕████████████████████████████████████████████████████████▏  254 B
+pulling 577073ffcc6c... 100% ▕████████████████████████████████████████████████████████▏  110 B
+pulling 3f8eb4da87fa... 100% ▕████████████████████████████████████████████████████████▏  485 B
+verifying sha256 digest
+writing manifest
+success
+```
+> You can remove a model using the following command: `ollama rm gemma3:1b`.
+
+5.	At the command prompt or terminal, enter the command to list the available local models, as shown in the following command:
+```shell
+ollama list
+```
+6.	Note the response, as shown in the following output:
+```
+NAME              ID              SIZE    MODIFIED
+gemma3:1b         8648f39daa8f    815 MB  7 seconds ago
+llama3.1:latest   46e0c10c039e    4.9 GB  2 minutes ago
+```
+7.	At the command prompt or terminal, enter the command to run a named model (which will also download it if not already pulled):
+```shell
+ollama run gemma3:1b
+```
+8.	Note the response, as shown in the following output:
+```
+>>> Send a message (/? for help)
+```
+9.	Enter a prompt, like, `What is Django?`, and note the response, which will use Markdown syntax for formatting.
+10.	Enter the command to exit: `/bye`
+
+>Ollama CLI also has commands to copy models and create new models. You can learn about these and other commands in the documentation at the following link: https://github.com/ollama/ollama#cli-reference.
+
+Ollama provides client libraries for Python and JavaScript.
+
+# Integrating Ollama with VS Code
+
+Let’s do it:
+1.	Add Ollama as a model provider in VS Code via the AI Toolkit extension, which can add Ollama models and endpoints into VS Code’s model list.
+
+> You can learn more about the AI Toolkit extension at the following link: https://learn.microsoft.com/en-us/windows/ai/toolkit/
+
+2.	A typical UI flow (as documented by Ollama) is in the Copilot sidebar. In the **Pick Model** dropdown, expand **Other Models**, choose **Manage Models**, pick **Ollama** as the provider, and select the local model you pulled, as shown in *Figure 11.2*:
+
+![Selecting a model for GitHub Copilot in VS Code](B34553_11_02.png) 
+
+*Figure 11.2: Selecting a model for GitHub Copilot in VS Code*
+
+3.	In Copilot Chat, switch the model to your Ollama-backed model.
+4.	Test with a safe task first: `Explain what this function does` or `Generate unit tests for this method signature`.
+
+> **Prompt**: What are the security risks of running uncensored models locally?
+
+# Running local models with LM Studio
+
+An alternative to Ollama is **LM Studio**, with which you can:
+- Run LLMs on your laptop, entirely offline
+- Use models through the in-app Chat UI or an OpenAI-compatible local server
+- Download any compatible model files from Hugging Face repositories
+- Discover new and noteworthy LLMs on the app's home page
+
+To get started with LM Studio:
+1.	In your preferred browser, navigate to: https://lmstudio.ai/.
+2.	Click the button to download LM Studio for your OS.
+3.	Once it’s downloaded, start the desktop app.
+4.	Navigate to the model search page and pick a suitable model. Click the model’s **Download** button, as shown in *Figure 11.3:*
+
+![The LM Studio model download page for DeepSeek’s R1 7B model](B34553_11_03.png)  
+
+*Figure 11.3: The LM Studio model download page for DeepSeek’s R1 7B model*
+
+5.	Wait for the model to download.
+6.	Navigate to Chats, and at the top of the window, select the model you downloaded.
+7.	In the USER box, enter a prompt, for example: What is Django in one paragraph?. Note the response, which should be reasonably accurate, as shown in *Figure 11.4*:
+
+![LM Studio chat session](B34553_11_04.png)
+
+*Figure 11.4: LM Studio chat session*
+
+8.	In the **USER** box, enter a prompt, for example: `Who says, "Why is Gamora?", and why`?
+9.	Note that the response may include hallucinations, as shown in the following response:
+```
+The phrase "Why is Gamora?" doesn’t appear to be widely recognized as an actual quote or line spoken by the character Gamora in any media, including Marvel's Iron Man or other related works. If you encountered this phrasing elsewhere, it might be a misremembered reference to something specific from a particular source or context (like a fan fiction, movie reference, or joke). Could you provide more context? I’d be happy to help further!
+```
+
+10.	With advanced models like DeepSeek’s R1, it can be useful to expand the **Thinking…** section, as shown in the following output and in *Figure 11.5*:
+```
+Thought for 12.84 seconds
+
+Alright, so the user asked about who said "Why is Gamora?" and why. Looking back at our conversation history, I had just explained what .NET was in a detailed response. Now, they're asking about a completely different topic—Gamora.
+
+Hmm, "Why is Gamora?" That sounds familiar, but I'm not sure where I heard it before. Let me think... It might be from a movie or a show. Maybe Iron Man 3? Gamora is a character from the Avengers, created by Marvel. She's an astrophysicist who has a strong connection with technology.
+
+Wait, maybe they're referring to something specific like a line spoken in a particular scene or context. I should check if that phrase exists anywhere. If it's not widely known, perhaps it's from fan fiction or a lesser-known source.
+
+Also, considering the user might be confused between different characters or misremembering something. Maybe they saw the character Gamora and associated her with a specific quote without knowing its origin.
+
+I should make sure to explain that "Why is Gamora?" isn't a widely recognized line and suggest it's possible they're thinking of a particular source. Offering further help could be useful if they need more information or clarification.
+```
+
+![What was the model thinking?](B34553_11_05.png)
+
+*Figure 11.5: What was the model thinking?*
+
+11.	Now, if I ask the same question to ChatGPT-5.5, I get a much better response:
+```
+The line "Why is Gamora?" is said by Drax, a character from the movie Avengers: Infinity War. This moment occurs during a scene where the Avengers confront the Guardians of the Galaxy for the first time. 
+[cont.]
+```
+
+Cloud-based AI coding assistants tend to be more capable overall because they run on larger, frequently updated models with access to broader training data and higher compute, which usually translates into better code generation, deeper reasoning, and faster improvements over time. 
+
+Local models, by contrast, offer stronger privacy, lower latency, and full control over the environment, but they are typically smaller and less accurate unless you have access to high-end hardware and invest time in tuning them. In practice, cloud models are generally more effective for complex or unfamiliar tasks, while local models are better suited to sensitive codebases or situations where offline access and data control matter more than peak performance.
