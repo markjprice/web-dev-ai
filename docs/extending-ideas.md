@@ -24,9 +24,9 @@ The website could support the following additional question types:
 •	Ranking a list of items
 
 Each item type should allow a rich text question for each item and allow arbitrary rich text and images throughout a survey.
-SurveyMonkey keeps the cool item types for the paid tiers, as shown in *Figure 13.3*:
-![Upgrade SurveyMonkey to unlock most item types](B34553_13_03.png)
-*Figure 13.3: Upgrade SurveyMonkey to unlock most item types*
+SurveyMonkey keeps the cool item types for the paid tiers, as shown in *Figure 1*:
+![Upgrade SurveyMonkey to unlock most item types](extending-ideas-01.png)
+*Figure 1: Upgrade SurveyMonkey to unlock most item types*
 
 # Extended survey design requirements
 
