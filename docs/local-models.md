@@ -15,6 +15,10 @@
   - [$50,000 range (small lab or startup setup)](#50000-range-small-lab-or-startup-setup)
 - [Local model cost summary](#local-model-cost-summary)
 - [Interesting Reddit posts about local models](#interesting-reddit-posts-about-local-models)
+  - [MacBook Pro M1 Max 64GB unified memory](#macbook-pro-m1-max-64gb-unified-memory)
+  - [Pros and cons of local and cloud models](#pros-and-cons-of-local-and-cloud-models)
+  - [Cons of using the cloud](#cons-of-using-the-cloud)
+  - [Gemma 4 31B and cons of local (more management)](#gemma-4-31b-and-cons-of-local-more-management)
 
 
 # Configuring a "free" local LLM
@@ -297,11 +301,15 @@ As usual, the best option is to do both, appropriately:
 
 # Interesting Reddit posts about local models
 
+## MacBook Pro M1 Max 64GB unified memory
+
 I currently own a MacBook Pro M1 Max 64GB unified memory. So I was interested to read a recent Reddit post by a local model user with the same machine.
 
 > *Currently run Qwen3.6 and Gemma4-26b (both 8bits) on M1Max 64GB via oMLX. This setup is enough for me to write scripts for data analytic tasks (what I use Sonnet 4.6 for). Low key the quality of these models are good enough that I’m quickly transitioning to a stage where I don’t even need the Claude pro sub anymore. Obviously it’s not even half as quick as Claude but the fact that I’m not limited by Claude downtime is more than enough to help me have a better workflow.*
 
-Another Reddit post talked about the practical differences between local and cloud models.
+## Pros and cons of local and cloud models
+
+A Reddit post talked about the practical differences between local and cloud models.
 
 > *Rate limits kill momentum. When you're in the zone and Claude cuts you off mid-thought, that context switch is brutal. A local model that's 80% as smart but available 24/7 with zero limits lets you iterate way faster on the straightforward stuff. Save your Claude tokens for the hard problems - architecture decisions, complex debugging, novel algorithm design.*
 > Practical setup that works:
@@ -311,6 +319,12 @@ Another Reddit post talked about the practical differences between local and clo
 > 
 > *One thing nobody tells you: The intelligence gap closes fast when you can iterate without limits. A "dumber" model you can run 50 times costs nothing vs a smarter model you can run 5 times before hitting a wall. Quantity of iterations often beats quality of individual responses for coding.*
 
-And one more:
+## Cons of using the cloud
+
+One of the biggest risks of using cloud models is the possibility of being banned by your provider. There are a growing number of anecdotes on Reddit about organizations with Business, Team, or Enterprise licenses for cloud AI providers who report their entire organization of hundreds of workers being banned. In a typical thread about this:
+
+> The consensus is that banning an entire organization without warning, explanation, or a human to talk to is a massive red flag for any business. Everyone's pointing out the supreme irony of Anthropic becoming the very 'supply chain risk' they warned about, especially since OP's API account is still getting billed while admins are locked out. The leading theory is that Anthropic is simply out of compute and is aggressively shedding heavy users, though overzealous safety filters are also a popular guess. Several users report similar sudden bans with zero recourse, even on Enterprise plans. The community's advice is unanimous: diversify your models. Use API routers, have backup providers, and look into open-source alternatives so you don't get rugged. The general vibe is that while Claude is great, relying on a single provider with opaque, automated enforcement is a recipe for disaster.
+
+## Gemma 4 31B and cons of local (more management)
 
 > *The local LLM needs more curating and structuring. The cloud API models were better 3 months ago. They have all degraded severely with increased demand. Meanwhile the local 31B from Gemma 4 family is insanely good. I have 4 variants from huggingface. Coding, creative writing partner, daily chat, and visual screener. I make games and software for me and my clients and my family. 3090 24GB with 192gb RAM*
