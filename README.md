@@ -34,10 +34,10 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 - Chapter 1, Introduction to Web Development with an AI Sidekick
 
 **Part 1: Frontend Web Development**
-- Chapter 2, HTML – Structuring Your Webpages [Code/Chapter2](Code/Chapter2)
-- Chapter 3, CSS – Styling Your Webpages [Code/Chapter3](Code/Chapter3)
+- Chapter 2, HTML – Structuring Your Web Pages [Code/Chapter2](Code/Chapter2)
+- Chapter 3, CSS – Styling Your Web Pages [Code/Chapter3](Code/Chapter3)
 - Chapter 4, SVG – Drawing Scalable Graphics [Code/Chapter4](Code/Chapter4)
-- Chapter 5, JavaScript – Making Webpages Interactive [Code/Chapter5](Code/Chapter5)
+- Chapter 5, JavaScript – Making Web Pages Interactive [Code/Chapter5](Code/Chapter5)
 - Chapter 6, TypeScript – Safer JavaScript [Code/Chapter6](Code/Chapter6)
 
 **Part 2: Backend Web Development**
@@ -65,4 +65,4 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 
 # Book Cover
 
-![Book Cover](docs/assets/B34553_Cover.png)
+![Book Cover](B34553_Cover.png)
