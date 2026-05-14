@@ -44,7 +44,7 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 - Chapter 7, SQL – Managing Data [Code/Chapter7](Code/Chapter7)
 - Chapter 8, Python – Programming on the Backend [Code/Chapter8](Code/Chapter8)
 - Chapter 9, Django – Web Development on the Backend [Code/Chapter9](Code/Chapter9)
-- Chapter 10, Bash/Shell – Command-Line Power for Developers [Code/Chapter10](Code/Chapter10)
+- Chapter 10, Bash/Shell – Command-Line Skills for Developers [Code/Chapter10](Code/Chapter10)
 
 **Part 3: Survey Project** [Code/TallyApp](Code/TallyApp)
 - Chapter 11, Setting Up Your Project Environment
