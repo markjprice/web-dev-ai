@@ -13,6 +13,7 @@ Repository for the Packt Publishing book titled *Web Dev with an AI Sidekick* by
 - [Online content](#online-content)
 - [Book Cover](#book-cover)
 
+Join the discussion on the book's Discord channel: https://discord.gg/rdEsrVbbC
 
 # Free PDF/ePub of the book and how to contact the publisher Packt
 
