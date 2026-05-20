@@ -2,6 +2,8 @@
 
 *How beginners can use AI to learn web development without skipping the thinking.*
 
+![AI Is a Sidekick, Not a Shortcut](ai-is-a-sidekick-not-a-shortcut.png)
+
 The worst way to learn web development with AI is to ask it to write everything for you.
 
 That might sound strange. If AI can generate HTML, CSS, JavaScript, Python, SQL, tests, documentation, and deployment scripts, why not let it do as much as possible?
