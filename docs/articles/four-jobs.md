@@ -25,6 +25,8 @@ Here are four jobs an AI sidekick can do well when you are learning to code.
 
 ## 1. Teacher: explains concepts
 
+![Teacher: explains concepts](four-jobs-1-teacher.png)
+
 The teacher role is useful when you meet a new idea and need an explanation that fits your current level.
 
 This is especially useful in web development because the stack is wide. A beginner may move from HTML to CSS to JavaScript to SQL to Python to Django in a single course. Each part has its own vocabulary.
@@ -75,9 +77,9 @@ The teacher role is not about replacing the book, the course, or the tutor. It g
 
 ## 2. Coach: gives practice and hints
 
-The coach role is different from the teacher role.
+![Coach: gives practice and hints](four-jobs-2-coach.png)
 
-A teacher explains. A coach makes you do the work.
+The coach role is different from the teacher role. A teacher explains. A coach makes you do the work.
 
 This is where AI can be excellent for beginners, if used carefully. It can generate practice tasks, give hints, ask follow-up questions, and nudge you toward the next step without handing over the final answer.
 
@@ -120,6 +122,8 @@ Useful coach prompts:
 The coach role is probably the safest place for beginners to use AI. The learner is still writing code. The AI is shaping the practice around them.
 
 ## 3. Reviewer: checks your work
+
+![Reviewer: checks your work](four-jobs-3-reviewer.png)
 
 The reviewer role is where AI looks at code you have already written.
 
@@ -170,6 +174,8 @@ Useful reviewer prompts:
 The reviewer role teaches a valuable habit: do not trust code because it looks tidy. Check behavior. Ask what the code does. Ask what could fail. Ask what needs testing. This is where AI can help a beginner learn the habits of a more experienced developer.
 
 ## 4. Rubber duck: helps you think through a problem
+
+![Rubber duck: helps you think through a problem](four-jobs-4-rubber-duck.png)
 
 The rubber duck role may be the least obvious, but it is one of the most useful.
 
